@@ -22,7 +22,9 @@ the data is a collection of multiple Excel spreadsheets from a database it shows
 -----------------
 ## Cleaning & Analysis
 1- Create a database for this dataset to use the power of SQL freely
+
 2 – After creating the database I develop a SQL Query to merge some tables (left join).
+
 ![](photo/SQL.png)
 ------------------
 3 - Develop a SQL Query in Power BI(measures) to calculate the:
@@ -33,24 +35,30 @@ Parking percentage = sum(Query1[required_car_parking_spaces])/[Totle nighit]
 Totle night : SUM(Query1[stays_in_week_nights])+SUM(Query1[stays_in_weekend_nights])
 
 ## Data Transformation
-Using the BI Query to transform the required data to Power BI
+### Using the BI Query to transform the required data to Power BI
 -------------------
-with hotels as ( 
+with hotels as (
+
 select * from dbo.['2018$']
+
 )
+
 select  * from hotels
+
 left join dbo.market_segment$
+
 on hotels.market_segment = market_segment$.market_segment
+
 
 left join dbo.meal_cost$
 on meal_cost$.meal = hotels.meal
 
 --------------
 
-Modeling
-No modeling was required since we need just a table for the analysis.
+## Modeling
+### No modeling was required since we need just a table for the analysis.
 
-The dashboard
+## The dashboard
 
 ![](photo/DB.png)
 --------------------
